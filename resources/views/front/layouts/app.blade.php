@@ -14,6 +14,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    @yield('css')
+
     <!-- Styles -->
     @include('front.layouts.headerscript')
 </head>
@@ -24,4 +26,5 @@
 
     @include('front.layouts.footer')
 
+    @yield('scripts')
 </html>
