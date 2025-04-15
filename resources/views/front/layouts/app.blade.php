@@ -22,4 +22,6 @@
     @include('front.layouts.footerscript')
 </body>
 
+    @include('front.layouts.footer')
+
 </html>
