@@ -24,8 +24,6 @@
     @yield('content')
 </body>
 
-@include('front.layouts.footer')
-
 @include('front.layouts.footerscript')
 @yield('scripts')
 
