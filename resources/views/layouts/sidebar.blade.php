@@ -31,9 +31,9 @@
           </ul>
         </li> --}}
 
-        <li class="{{ Request::is('admin/keywords') ? 'active' : '' }}">
-          <a href="{{ url('admin/keywords') }}">
-            <i class="fa fa-cog"></i> <span>Keyword</span>
+        <li class="{{ Request::is('admin/services') || Request::is('admin/services/*') ? 'active' : '' }}">
+          <a href="{{ url('admin/services') }}">
+            <i class="fa fa-list"></i> <span>Service</span>
           </a>
         </li>
 

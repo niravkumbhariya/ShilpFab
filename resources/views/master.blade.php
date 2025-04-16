@@ -26,6 +26,9 @@
   font-weight:bold;
   font-size:12px;
 }
+.cke_notifications_area {
+    display: none !important;
+}
 </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -52,7 +55,7 @@
       radioClass   : 'iradio_minimal-purple'
     });
 
-    CKEDITOR.replace( 'description' );
+    CKEDITOR.replace( 'desc' );
 
     $('.logout').on('click',function(e){
           e.preventDefault();
