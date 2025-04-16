@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title') | {{ config('app.name', 'ShilpFab') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -21,10 +21,12 @@
 </head>
 
 <body>
-    @include('front.layouts.footerscript')
+    @yield('content')
 </body>
 
-    @include('front.layouts.footer')
+@include('front.layouts.footer')
 
-    @yield('scripts')
+@include('front.layouts.footerscript')
+@yield('scripts')
+
 </html>

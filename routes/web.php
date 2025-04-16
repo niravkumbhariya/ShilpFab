@@ -18,8 +18,8 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::view('/', 'front.index')->name('front');
-Route::view('about', 'front.about')->name('front');
-Route::view('contact', 'front.contact')->name('front');
+Route::view('about', 'front.about')->name('front.about');
+Route::view('contact', 'front.contact')->name('front.contact');
 Route::get('/post/{id}/{slug}', [HomeController::class, 'single'])->name('front.single');
 // Route::get('/', function () {
 //     return view('auth/login');

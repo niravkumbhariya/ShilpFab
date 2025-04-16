@@ -1,0 +1,57 @@
+.container {max-width: 1440px; width: 100%; padding: 0 20px; margin: 0 auto; box-sizing: border-box;}
+
+hr {border-bottom: 1px solid var(--border-color); margin-bottom: 20px;}
+
+h1 {font-size: 44px; font-weight: 700; line-height: 54px; margin-bottom: 25px; color: var(--color-black);}
+h2 {font-size: 40px; font-weight: 700; line-height: 50px; margin-bottom: 25px; color: var(--color-black);}
+h3 {font-size: 36px; font-weight: 700; line-height: 42px; margin-bottom: 25px; color: var(--color-black);}
+h4 {font-size: 32px; font-weight: 600; line-height: 36px; margin-bottom: 20px; color: var(--color-black);}
+h5 {font-size: 30px; font-weight: 600; line-height: 34px; margin-bottom: 20px; color: var(--color-black);}
+h6 {font-size: 26px; font-weight: 600; line-height: 30px; margin-bottom: 20px; color: var(--color-black);}
+
+p {font-size: 16px; font-weight: 400; line-height: 28px; letter-spacing: 1px; color: var(--color-black); margin-bottom: 20px; }
+
+.btn-primary {background: var(--primary-color); border-radius: 4px; color: var(--color-white); font-weight: 500; padding: 8px 20px; border: 1px solid var(--primary-color); transition: 0.3s ease-in-out; font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.4; letter-spacing: 2px; cursor: pointer; }
+.btn-primary:hover {color: var(--primary-color); background: transparent; }
+
+.input-group {
+    margin-bottom: 20px;
+}
+label {
+    font-size: 16px;
+    color: var(--color-black);
+    margin-bottom: 5px;   
+}
+input {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    height: 40px;
+    border-radius: 4px;
+    padding: 0 15px;
+    color: var(--color-black);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+input::placeholder {
+    color: var(--color-black);
+    opacity: 0.4;
+}
+textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 15px;
+    color: var(--color-black);
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', serif;
+}
+textarea::placeholder {
+    color: var(--color-black);
+    opacity: 0.4;
+}
+
+address {
+    font-style: normal;
+    color: var(--color-black);
+}
