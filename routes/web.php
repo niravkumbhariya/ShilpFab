@@ -20,6 +20,7 @@ use App\Http\Controllers\HomeController;
 Route::view('/', 'front.index')->name('front');
 Route::view('about', 'front.about')->name('front.about');
 Route::view('contact', 'front.contact')->name('front.contact');
+Route::view('our-work', 'front.our-work')->name('front.work');
 Route::get('/post/{id}/{slug}', [HomeController::class, 'single'])->name('front.single');
 // Route::get('/', function () {
 //     return view('auth/login');

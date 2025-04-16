@@ -1,5 +1,5 @@
 @extends('front.layouts.app')
-@section('title', 'Home')
+@section('title', 'Contact Us')
 @section('css')
 @endsection
 @section('content')

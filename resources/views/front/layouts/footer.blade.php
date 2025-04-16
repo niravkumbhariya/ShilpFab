@@ -14,10 +14,10 @@
         <div class="useful-links">
             <h6 class="links-label">Company Links</h6>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Works</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="{{route('front')}}">Home</a></li>
+                <li><a href="{{route('front.work')}}">Our Works</a></li>
+                <li><a href="{{route('front.about')}}">About Us</a></li>
+                <li><a href="{{route('front.contact')}}">Contact Us</a></li>
             </ul>
         </div>
         <div class="services-links">
