@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SitemapController;
+use App\Http\Controllers\admin\WorkController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -41,4 +42,15 @@ Route::group(['prefix' => 'admin/services', 'middleware' => ['auth'],], function
     Route::put('/update/{id}', [ServiceController::class, 'update'])->name('services.update');
     Route::get('/delete/{id}', [ServiceController::class, 'delete'])->name('services.delete');
     Route::get('/changeStatus/{id}', [ServiceController::class, 'changeStatus'])->name('services.changeStatus');
+});
+
+Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function () {
+    Route::get('/', [WorkController::class, 'index'])->name('works');
+    Route::get('getWorksData', [WorkController::class, 'getData'])->name('getworksData');
+    Route::get('create', [WorkController::class, 'create'])->name('works.create');
+    Route::post('store', [WorkController::class, 'store'])->name('works.store');
+    Route::get('/{id}/edit', [WorkController::class, 'edit'])->name('works.edit');
+    Route::put('/update/{id}', [WorkController::class, 'update'])->name('works.update');
+    Route::get('/delete/{id}', [WorkController::class, 'delete'])->name('works.delete');
+    Route::get('/changeStatus/{id}', [WorkController::class, 'changeStatus'])->name('works.changeStatus');
 });

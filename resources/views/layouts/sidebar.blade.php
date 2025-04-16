@@ -37,6 +37,12 @@
           </a>
         </li>
 
+        <li class="{{ Request::is('admin/works') || Request::is('admin/works/*') ? 'active' : '' }}">
+            <a href="{{ url('admin/works') }}">
+                <i class="fa fa-briefcase"></i> <span>Works</span>
+            </a>
+          </li>
+
       </ul>
     </section>
   </aside>

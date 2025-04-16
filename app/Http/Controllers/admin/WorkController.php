@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\admin;
 
 use DataTables;
+use App\Models\work;
 use App\Helper\Helper;
-use App\Models\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
-class ServiceController extends Controller
+class WorkController extends Controller
 {
-    public $route = 'admin/services';
-    public $view  = 'admin/services.';
-    public $moduleName = 'Services';
+    public $route = 'admin/works';
+    public $view  = 'admin/works.';
+    public $moduleName = 'Works';
 
     public function index()
     {
@@ -23,13 +23,13 @@ class ServiceController extends Controller
 
     public function getData()
     {
-        $data = Service::get();
+        $data = Work::get();
         return Datatables::of($data)
             ->addIndexColumn()
             ->addColumn('action', function ($row) {
-                $editUrl = route('services.edit', encrypt($row->id));
-                $deleteUrl = route('services.delete', encrypt($row->id));
-                $statusUrl = route('services.changeStatus', encrypt($row->id));
+                $editUrl = route('works.edit', encrypt($row->id));
+                $deleteUrl = route('works.delete', encrypt($row->id));
+                $statusUrl = route('works.changeStatus', encrypt($row->id));
                 $btn = '';
                 $btn .= '<a href="' . $editUrl . '" class="edit btn btn-primary btn-sm" style="margin-left:5px;"><i class="fa fa-pencil"> </i> Edit</a>';
 
@@ -49,7 +49,7 @@ class ServiceController extends Controller
             })
 
             ->addColumn('image', function ($row) {
-                $path = asset('public/storage/services/' . $row->image);
+                $path = asset('public/storage/works/' . $row->image);
                 return "<center><img src='$path' width='100px' height='70px'></center>";
             })
 
@@ -71,8 +71,8 @@ class ServiceController extends Controller
             'desc' => 'required',
         ]);
 
-        $image = Helper::fileUpload($request, 'image', 'services');
-        Service::create([
+        $image = Helper::fileUpload($request, 'image', 'works');
+        Work::create([
             'title' => $request->title,
             'image' => $image,
             'desc'  => $request->desc
@@ -85,13 +85,13 @@ class ServiceController extends Controller
     public function edit($id)
     {
         $moduleName = $this->moduleName;
-        $service = Service::find(decrypt($id));
-        return view($this->view . '_form', compact('service', 'moduleName'));
+        $work = Work::find(decrypt($id));
+        return view($this->view . '_form', compact('work', 'moduleName'));
     }
 
     public function update(Request $request, $id)
     {
-        $service = Service::findOrFail($id);
+        $work = Work::findOrFail($id);
 
         $request->validate([
             'title' => 'required|string|max:255',
@@ -99,22 +99,22 @@ class ServiceController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $service->title = $request->title;
-        $service->desc = $request->desc;
+        $work->title = $request->title;
+        $work->desc = $request->desc;
 
         // Handle new image upload
         if ($request->hasFile('image')) {
             // Delete old image
-            if ($service->image && Storage::exists("public/services/{$service->image}")) {
-                Storage::delete("public/services/{$service->image}");
+            if ($work->image && Storage::exists("public/works/{$work->image}")) {
+                Storage::delete("public/works/{$work->image}");
             }
 
             // Upload new image
-            $fileName = Helper::fileUpload($request, 'image', 'services');
-            $service->image = $fileName;
+            $fileName = Helper::fileUpload($request, 'image', 'works');
+            $work->image = $fileName;
         }
 
-        $service->save();
+        $work->save();
 
         Helper::successMsg('update', $this->moduleName);
         return redirect($this->route);
@@ -123,12 +123,12 @@ class ServiceController extends Controller
 
     public function changeStatus($id)
     {
-        $status = Service::find(decrypt($id))->is_active;
+        $status = Work::find(decrypt($id))->is_active;
 
         if ($status == 1) {
-            Service::find(decrypt($id))->update(['is_active' => 0]);
+            Work::find(decrypt($id))->update(['is_active' => 0]);
         } else {
-            Service::find(decrypt($id))->update(['is_active' => 1]);
+            Work::find(decrypt($id))->update(['is_active' => 1]);
         }
 
         Helper::successMsg('custom', 'Status Change Successfully.');
@@ -137,16 +137,16 @@ class ServiceController extends Controller
 
     public function delete($id)
     {
-        // Find the service by its decrypted ID
-        $service = Service::findOrFail(decrypt($id));
+        // Find the work by its decrypted ID
+        $work = Work::findOrFail(decrypt($id));
 
         // Delete the image if it exists
-        if ($service->image && Storage::exists("public/services/{$service->image}")) {
-            Storage::delete("public/services/{$service->image}");
+        if ($work->image && Storage::exists("public/works/{$work->image}")) {
+            Storage::delete("public/works/{$work->image}");
         }
 
-        // Delete the service record from the database
-        $service->delete();
+        // Delete the work record from the database
+        $work->delete();
 
         Helper::successMsg('delete', $this->moduleName);
         return redirect($this->route);
