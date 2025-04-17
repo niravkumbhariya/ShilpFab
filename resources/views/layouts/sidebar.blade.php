@@ -31,11 +31,17 @@
           </ul>
         </li> --}}
 
-        <li class="{{ Request::is('admin/keywords') ? 'active' : '' }}">
-          <a href="{{ url('admin/keywords') }}">
-            <i class="fa fa-cog"></i> <span>Keyword</span>
+        <li class="{{ Request::is('admin/services') || Request::is('admin/services/*') ? 'active' : '' }}">
+          <a href="{{ url('admin/services') }}">
+            <i class="fa fa-list"></i> <span>Service</span>
           </a>
         </li>
+
+        <li class="{{ Request::is('admin/works') || Request::is('admin/works/*') ? 'active' : '' }}">
+            <a href="{{ url('admin/works') }}">
+                <i class="fa fa-briefcase"></i> <span>Works</span>
+            </a>
+          </li>
 
       </ul>
     </section>

@@ -23,7 +23,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">{{ $moduleName }} List</h3>
           <div class="box-tools">
-            <a href="{{ route('keywords.create') }}" class="btn btn-theme btn-sm">+ New</a>
+            <a href="{{ route('services.create') }}" class="btn btn-theme btn-sm">+ New</a>
           </div>
 
          {{--  <div class="box-tools pull-right">
@@ -37,8 +37,9 @@
                 <thead>
                 <tr>
                   <th>Sr No.</th>
-                  <th>Name</th>
-                  <th>Status</th>
+                  <th>Title</th>
+                  <th>Image</th>
+                  <th>Desc</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -47,8 +48,9 @@
                 <tfoot>
                   <tr>
                   <th>Sr No.</th>
-                  <th>Name</th>
-                  <th>Status</th>
+                  <th>Title</th>
+                  <th>Image</th>
+                  <th>Desc</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -69,11 +71,12 @@
    var table = $('.datatable').DataTable({
           processing: true,
           serverSide: true,
-          ajax: "{{ route('getKeywordsData') }}",
+          ajax: "{{ route('getservicesData') }}",
           columns: [
               {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-              {data: 'name', name: 'name'},
-              {data: 'is_active', name: 'is_active'},
+              {data: 'title', name: 'title'},
+              {data: 'image', name: 'image'},
+              {data: 'desc', name: 'desc'},
               {data: 'action', name: 'action', orderable: false, searchable: false},
           ]
       });

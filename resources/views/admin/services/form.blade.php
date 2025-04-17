@@ -22,7 +22,7 @@
         <!-- Default box -->
         <div class="box">
             <div class="box-header with-border">
-                <h3 class="box-title">Create New Category</h3>
+                <h3 class="box-title">Create New {{ $moduleName }}</h3>
 
                 <div class="box-tools pull-right">
 
@@ -32,35 +32,54 @@
                 </div>
             </div>
             <div class="box-body">
-                <form action="{{ route('keywords.update', $keyword->id) }}" method="POST" enctype="multipart/form-data">
+
+                <form action="{{ route('services.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf()
-                    @method('PUT')
-                    <input type="hidden" name="id" value="{{ $keyword->id }}">
                     <div class="form-group">
                         <div class="row">
 
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
-                                    <label for="name">Name: *</label>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        placeholder="Keyword Name" value="{{ old('name',$keyword->name) }}">
+                                    <label for="title">Title: *</label>
+                                    <input type="text" class="form-control" id="title" name="title"
+                                        placeholder="Service Title" value="{{ old('title') }}">
+                                    <span class="error"> {{ $errors->first('title') }}</span>
                                 </div>
                             </div>
 
+
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
-                                    <label for="status">Status: *</label><br>
-                                    <span class="py-5"><input type="radio" name="status" value="1" {{ ($keyword->is_active == 1) ? 'checked' : ''}}> Active</span>
-                                    <span class="py-34"><input type="radio" name="status" value="0" {{ ($keyword->is_active == 0) ? 'checked' : ''}}> In
-                                        Active</span>
+                                    <label for="image">*Image:</label>
+                                    <input type="file" class="form-control" id="image" name="image">
+                                    <span class="error"> {{ $errors->first('image') }}</span>
                                 </div>
                             </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="desc">Description: *</label>
+                                    <textarea name="desc"></textarea>
+                                    <span class="error"> {{ $errors->first('desc') }}</span>
+                                </div>
+                            </div>
+
+                            {{-- <div class="col-md-6 col-sm-12">
+                                <div class="form-group">
+                                    <label for="status">Status: *</label><br>
+                                    <span class="py-5"><input type="radio" name="status" value="1" checked>
+                                        Active</span>
+                                    <span class="py-34"><input type="radio" name="status" value="0"> In
+                                        Active</span>
+                                </div>
+                                <span class="error"> {{ $errors->first('status') }}</span>
+                            </div> --}}
 
                         </div>
                     </div>
                     <!-- /.box-body -->
                     <div class="box-footer text-center">
-                        <a href="{{ route('keywords') }}" class="btn btn-sm btn-default">Cancel</a>
+                        <a href="{{ route('services') }}" class="btn btn-sm btn-default">Cancel</a>
                         <input type="submit" value="Submit" class="btn btn-sm btn-info">
                     </div>
                 </form>

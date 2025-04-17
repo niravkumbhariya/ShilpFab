@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSitemapsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateSitemapsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sitemaps', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('filename');
-            $table->boolean('view')->default(0)->comment('0-pendding,1-done');
+            $table->string('image');
+            $table->string('title');
+            $table->longText('desc');
+            $table->boolean('is_active')->default(1);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSitemapsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sitemaps');
+        Schema::dropIfExists('services');
     }
 }

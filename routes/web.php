@@ -1,8 +1,7 @@
 <?php
-
-use App\Http\Controllers\admin\KeywordController;
-use App\Http\Controllers\admin\QuestionController;
+use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SitemapController;
+use App\Http\Controllers\admin\WorkController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -29,16 +28,29 @@ Route::get('/post/{id}/{slug}', [HomeController::class, 'single'])->name('front.
 //     return view('auth/login');
 // })->middleware('guest');
 
-Auth::routes();
+Route::group(['prefix' => 'admin'], function () {
+    Auth::routes();
+});
 
-Route::view('/admin','admin.index');
-Route::group(['prefix' => 'admin/keywords', 'middleware' => ['auth'],], function () {
-    Route::get('/', [KeywordController::class, 'index'])->name('keywords');
-    Route::get('getKeywordsData', [KeywordController::class, 'getData'])->name('getKeywordsData');
-    Route::get('create', [KeywordController::class, 'create'])->name('keywords.create');
-    Route::post('store', [KeywordController::class, 'store'])->name('keywords.store');
-    Route::get('/{id}/edit', [KeywordController::class, 'edit'])->name('keywords.edit');
-    Route::put('/update/{id}', [KeywordController::class, 'update'])->name('keywords.update');
-    Route::get('/delete/{id}', [KeywordController::class, 'delete'])->name('keywords.delete');
-    Route::get('/changeStatus/{id}', [KeywordController::class, 'changeStatus'])->name('keywords.changeStatus');
+Route::view('/admin','admin.index')->middleware('auth');
+Route::group(['prefix' => 'admin/services', 'middleware' => ['auth'],], function () {
+    Route::get('/', [ServiceController::class, 'index'])->name('services');
+    Route::get('getServicesData', [ServiceController::class, 'getData'])->name('getservicesData');
+    Route::get('create', [ServiceController::class, 'create'])->name('services.create');
+    Route::post('store', [ServiceController::class, 'store'])->name('services.store');
+    Route::get('/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
+    Route::put('/update/{id}', [ServiceController::class, 'update'])->name('services.update');
+    Route::get('/delete/{id}', [ServiceController::class, 'delete'])->name('services.delete');
+    Route::get('/changeStatus/{id}', [ServiceController::class, 'changeStatus'])->name('services.changeStatus');
+});
+
+Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function () {
+    Route::get('/', [WorkController::class, 'index'])->name('works');
+    Route::get('getWorksData', [WorkController::class, 'getData'])->name('getworksData');
+    Route::get('create', [WorkController::class, 'create'])->name('works.create');
+    Route::post('store', [WorkController::class, 'store'])->name('works.store');
+    Route::get('/{id}/edit', [WorkController::class, 'edit'])->name('works.edit');
+    Route::put('/update/{id}', [WorkController::class, 'update'])->name('works.update');
+    Route::get('/delete/{id}', [WorkController::class, 'delete'])->name('works.delete');
+    Route::get('/changeStatus/{id}', [WorkController::class, 'changeStatus'])->name('works.changeStatus');
 });
