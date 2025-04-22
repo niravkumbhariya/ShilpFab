@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\admin\ContactUsController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SitemapController;
 use App\Http\Controllers\admin\WorkController;
@@ -55,6 +57,13 @@ Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function ()
     Route::put('/update/{id}', [WorkController::class, 'update'])->name('works.update');
     Route::get('/delete/{id}', [WorkController::class, 'delete'])->name('works.delete');
     Route::get('/changeStatus/{id}', [WorkController::class, 'changeStatus'])->name('works.changeStatus');
+});
+
+Route::group(['prefix' => 'admin/contacts', 'middleware' => ['auth'],], function () {
+    Route::get('/', [ContactUsController::class, 'index'])->name('contacts');
+    Route::get('getcontactsData', [ContactUsController::class, 'getData'])->name('getContactsData');
+    Route::get('/delete/{id}', [ContactUsController::class, 'delete'])->name('contacts.delete');
+
 });
 
 

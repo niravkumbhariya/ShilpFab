@@ -11,6 +11,7 @@
     <title>@yield('title') | {{ config('app.name', 'ShilpFab') }}</title>
 
     <!-- Fonts -->
+    <link rel="icon" href="{{ asset('public/front/images/logo.png') }}" type="image/x-icon">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 

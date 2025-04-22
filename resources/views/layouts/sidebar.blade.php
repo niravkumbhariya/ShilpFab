@@ -32,14 +32,20 @@
         </li> --}}
 
         <li class="{{ Request::is('admin/services') || Request::is('admin/services/*') ? 'active' : '' }}">
-          <a href="{{ url('admin/services') }}">
+          <a href="{{ route('services') }}">
             <i class="fa fa-list"></i> <span>Service</span>
           </a>
         </li>
 
         <li class="{{ Request::is('admin/works') || Request::is('admin/works/*') ? 'active' : '' }}">
-            <a href="{{ url('admin/works') }}">
+            <a href="{{ route('works') }}">
                 <i class="fa fa-briefcase"></i> <span>Works</span>
+            </a>
+          </li>
+
+          <li class="{{ Request::is('admin/contacts') || Request::is('admin/contacts/*') ? 'active' : '' }}">
+            <a href="{{ route('contacts') }}">
+                <i class="fa fa-users"></i> <span>Contacts</span>
             </a>
           </li>
 
