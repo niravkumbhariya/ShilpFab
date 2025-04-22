@@ -2,6 +2,7 @@
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\SitemapController;
 use App\Http\Controllers\admin\WorkController;
+use App\Http\Controllers\front\IndexController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
@@ -21,6 +22,7 @@ Route::view('about', 'front.about')->name('front.about');
 Route::view('contact', 'front.contact')->name('front.contact');
 Route::view('our-work', 'front.our-work')->name('front.work');
 Route::get('/post/{id}/{slug}', [HomeController::class, 'single'])->name('front.single');
+Route::post('contact',[IndexController::class,'storeContact'])->name('store.contact');
 // Route::get('/', function () {
 //     return view('auth/login');
 // })->middleware('guest');
@@ -54,3 +56,7 @@ Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function ()
     Route::get('/delete/{id}', [WorkController::class, 'delete'])->name('works.delete');
     Route::get('/changeStatus/{id}', [WorkController::class, 'changeStatus'])->name('works.changeStatus');
 });
+
+
+
+

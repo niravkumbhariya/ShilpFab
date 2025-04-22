@@ -50,31 +50,33 @@
                     </div>
                 </div>
                 <div class="form-section">
-                    <form>
+                    <form id="contact-form" action="{{ route('store.contact') }}" method="POST">
+                        @csrf
                         <div class="input-group">
                             <label>First Name</label>
-                            <input type="text" name="first-name" placeholder="First Name">
+                            <input type="text" name="firstname" placeholder="First Name">
                         </div>
                         <div class="input-group">
                             <label>Last Name</label>
-                            <input type="text" name="last-name" placeholder="Last Name">
+                            <input type="text" name="lastname" placeholder="Last Name">
                         </div>
                         <div class="input-group">
                             <label>Subject</label>
-                            <input type="text" name="Subject" placeholder="Subject">
+                            <input type="text" name="subject" placeholder="Subject">
                         </div>
                         <div class="input-group">
                             <label>Email</label>
-                            <input type="text" name="Email" placeholder="Email">
+                            <input type="email" name="email" placeholder="Email">
                         </div>
                         <div class="input-group textarea">
                             <label>Message</label>
-                            <textarea rows="10" placeholder="Message"></textarea>
+                            <textarea name="message" rows="10" placeholder="Message"></textarea>
                         </div>
 
-                        <button class="btn-primary">Send</button>
+                        <button type="submit" class="btn-primary">Send</button>
                     </form>
                 </div>
+
             </div>
         </div>
 
@@ -94,4 +96,27 @@
 
 
 @section('scripts')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $('#contact-form').on('submit', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).attr('action'),
+            method: "POST",
+            data: $(this).serialize(),
+            headers: {
+                'X-CSRF-TOKEN': $('input[name="_token"]').val()
+            },
+            success: function (response) {
+                alert('Message sent successfully!');
+                $('#contact-form')[0].reset();
+            },
+            error: function (xhr) {
+                alert('Something went wrong!');
+            }
+        });
+    });
+</script>
+
 @endsection
