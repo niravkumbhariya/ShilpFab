@@ -82,7 +82,7 @@
         <div class="more-info-section">
             <div class="info-box">
                 <img src="{{ asset('public/front/images/visitor.svg') }}" class="info-image" alt="user">
-                <h5>100</h5>
+                <h5>{{$totalVisitors}}</h5>
                 <p>Visitors</p>
             </div>
             <div class="info-box">
