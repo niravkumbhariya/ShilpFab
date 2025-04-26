@@ -4,10 +4,22 @@ namespace App\Http\Controllers\front;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactUs;
+use App\Models\Service;
+use App\Models\Work;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    public function index() {
+        $services = Service::where('is_active',1)->get();
+        return view('front.index',compact('services'));
+    }
+
+    public function work() {
+        $works = Work::where('is_active',1)->get();
+        return view('front.our-work',compact('works'));
+    }
+
     public function storeContact(Request $request)
     {
         $request->validate([

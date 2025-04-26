@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\admin\ContactUsController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\WorkController;
 use App\Http\Controllers\front\IndexController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +18,10 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::view('/', 'front.index')->name('front');
+Route::get('/', [IndexController::class,'index'])->name('front');
 Route::view('about', 'front.about')->name('front.about');
 Route::view('contact', 'front.contact')->name('front.contact');
-Route::view('our-work', 'front.our-work')->name('front.work');
+Route::get('our-work', [IndexController::class,'work'])->name('front.work');
 Route::post('contact',[IndexController::class,'storeContact'])->name('store.contact');
 // Route::get('/', function () {
 //     return view('auth/login');
@@ -34,7 +34,7 @@ Route::group(['prefix' => 'admin'], function () {
     Auth::routes();
 });
 
-Route::view('/admin','admin.index')->middleware('auth');
+Route::get('/admin',[DashboardController::class,'index'])->middleware('auth');
 Route::group(['prefix' => 'admin/services', 'middleware' => ['auth'],], function () {
     Route::get('/', [ServiceController::class, 'index'])->name('services');
     Route::get('getServicesData', [ServiceController::class, 'getData'])->name('getservicesData');

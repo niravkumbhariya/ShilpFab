@@ -27,78 +27,17 @@
     <div class="product-list-section">
         <div class="container">
             <div class="product-list-wrapper">
+                @foreach ($works as $work)
                 <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
+                    <div class="img-wrapper" style="height: 200px;">
+                        <img src="{{asset("public/storage/works/$work->image")}}" alt="Our Work">
                     </div>
                     <div class="service-content-wrapper">
-                        <h2 class="service-name">R E Well Mould</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
+                        <h2 class="service-name">{{$work->title}}</h2>
+                        <p>{!! Str::limit($work->desc,300,'...') !!}</p>
                     </div>
                 </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">Cross Breyer Mould</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">R E Well Mould</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">Friction Slab With Cross Beryer</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">R E Well Mould</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">Cross Breyer Mould</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">R E Well Mould</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
-                <div class="product-box">
-                    <div class="img-wrapper">
-                        <img src="{{asset('public/front/images/service-01.jpg')}}" alt="service">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">Friction Slab With Cross Beryer</h2>
-                        <p>Rajkot Vadinar Project L & T</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

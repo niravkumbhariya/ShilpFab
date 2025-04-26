@@ -28,60 +28,18 @@
                     <h1 class="main-title">Specialist Mould Services</h1>
                 </div>
                 <div class="product-list-wrapper service-box-wrapper owl-carousel owl-theme">
-                    <div class="product-box service-box">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/service-01.jpg') }}" alt="service">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h2 class="service-name">R E Well Mould</h2>
-                            <p>Air freight offers several advantages over other modes. Truck freight refers to the
-                                transportation of goods by road.</p>
-                        </div>
-                    </div>
 
-                    <div class="product-box service-box">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/service-01.jpg') }}" alt="service">
+                    @foreach ($services as $service)
+                        <div class="product-box service-box">
+                            <div class="img-wrapper">
+                                <img src="{{ asset("public/storage/services/$service->image") }}" alt="service">
+                            </div>
+                            <div class="service-content-wrapper">
+                                <h2 class="service-name">{{ $service->title }}</h2>
+                                <p>{!! Str::limit($service->desc, 300, '...') !!}</p>
+                            </div>
                         </div>
-                        <div class="service-content-wrapper">
-                            <h2 class="service-name">Cross breyer mould</h2>
-                            <p>Air freight offers several advantages over other modes. Truck freight refers to the
-                                transportation of goods by road.</p>
-                        </div>
-                    </div>
-
-                    <div class="product-box service-box">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/service-01.jpg') }}" alt="service">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h2 class="service-name">Friction slab with cross beryer</h2>
-                            <p>Air freight offers several advantages over other modes. Truck freight refers to the
-                                transportation of goods by road.</p>
-                        </div>
-                    </div>
-
-                    <div class="product-box service-box">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/service-01.jpg') }}" alt="service">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h2 class="service-name">Bountry wall collam mould</h2>
-                            <p>Air freight offers several advantages over other modes. Truck freight refers to the
-                                transportation of goods by road.</p>
-                        </div>
-                    </div>
-
-                    <div class="product-box service-box">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/service-01.jpg') }}" alt="service">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h2 class="service-name">Friction slab with cross beryer</h2>
-                            <p>Air freight offers several advantages over other modes. Truck freight refers to the
-                                transportation of goods by road.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -148,32 +106,8 @@
                             life.</h1>
                     </div>
                 </div>
-                <div class="form-section">
-                    <form>
-                        <div class="input-group">
-                            <label>First Name</label>
-                            <input type="text" name="first-name" placeholder="First Name">
-                        </div>
-                        <div class="input-group">
-                            <label>Last Name</label>
-                            <input type="text" name="last-name" placeholder="Last Name">
-                        </div>
-                        <div class="input-group">
-                            <label>Subject</label>
-                            <input type="text" name="Subject" placeholder="Subject">
-                        </div>
-                        <div class="input-group">
-                            <label>Email</label>
-                            <input type="text" name="Email" placeholder="Email">
-                        </div>
-                        <div class="input-group textarea">
-                            <label>Message</label>
-                            <textarea rows="10" placeholder="Message"></textarea>
-                        </div>
 
-                        <button class="btn-primary">Send</button>
-                    </form>
-                </div>
+                @include('front.contact-form')
             </div>
         </div>
 

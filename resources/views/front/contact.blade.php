@@ -8,8 +8,8 @@
         <header class="header">
             <div class="left-section">
                 <div class="logo">
-                    <a href="{{ route('front.contact')}}">
-                        <img src="{{ asset('public/front/images/logo.png')}}" alt="logo">
+                    <a href="{{ route('front.contact') }}">
+                        <img src="{{ asset('public/front/images/logo.png') }}" alt="logo">
                     </a>
                 </div>
             </div>
@@ -35,47 +35,25 @@
                     <div class="connect-links-section">
                         <ul>
                             <li>
-                                <div class="links-icons"><img src="{{asset('public/front/images/phone.svg')}}" alt="phone"></div>
+                                <div class="links-icons"><img src="{{ asset('public/front/images/phone.svg') }}"
+                                        alt="phone"></div>
                                 <a href="tel:+91 98258 21951">+91 98258 21951</a>
                             </li>
                             <li>
-                                <div class="links-icons"><img src="{{asset('public/front/images/email.svg')}}" alt="email"></div>
+                                <div class="links-icons"><img src="{{ asset('public/front/images/email.svg') }}"
+                                        alt="email"></div>
                                 <a href="mailto:test@gmail.com">test@gmail.com </a>
                             </li>
                             <li>
-                                <div class="links-icons"><img src="{{asset('public/front/images/pin.svg')}}" alt="location"></div>
+                                <div class="links-icons"><img src="{{ asset('public/front/images/pin.svg') }}"
+                                        alt="location"></div>
                                 <address>D-107/A, Almighty Gate, GIDC Lodhika, Metoda, Metoda, Gujarat 360021</address>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="form-section">
-                    <form id="contact-form" action="{{ route('store.contact') }}" method="POST">
-                        @csrf
-                        <div class="input-group">
-                            <label>First Name</label>
-                            <input type="text" name="firstname" placeholder="First Name">
-                        </div>
-                        <div class="input-group">
-                            <label>Last Name</label>
-                            <input type="text" name="lastname" placeholder="Last Name">
-                        </div>
-                        <div class="input-group">
-                            <label>Subject</label>
-                            <input type="text" name="subject" placeholder="Subject">
-                        </div>
-                        <div class="input-group">
-                            <label>Email</label>
-                            <input type="email" name="email" placeholder="Email">
-                        </div>
-                        <div class="input-group textarea">
-                            <label>Message</label>
-                            <textarea name="message" rows="10" placeholder="Message"></textarea>
-                        </div>
 
-                        <button type="submit" class="btn-primary">Send</button>
-                    </form>
-                </div>
+                @include('front.contact-form')
 
             </div>
         </div>
@@ -96,27 +74,4 @@
 
 
 @section('scripts')
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $('#contact-form').on('submit', function (e) {
-        e.preventDefault();
-
-        $.ajax({
-            url: $(this).attr('action'),
-            method: "POST",
-            data: $(this).serialize(),
-            headers: {
-                'X-CSRF-TOKEN': $('input[name="_token"]').val()
-            },
-            success: function (response) {
-                alert('Message sent successfully!');
-                $('#contact-form')[0].reset();
-            },
-            error: function (xhr) {
-                alert('Something went wrong!');
-            }
-        });
-    });
-</script>
-
 @endsection

@@ -27,5 +27,26 @@
 
 @include('front.layouts.footerscript')
 @yield('scripts')
+<script>
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault();
+
+        $.ajax({
+            url: $(this).attr('action'),
+            method: "POST",
+            data: $(this).serialize(),
+            headers: {
+                'X-CSRF-TOKEN': $('input[name="_token"]').val()
+            },
+            success: function(response) {
+                alert('Message sent successfully!');
+                $('#contact-form')[0].reset();
+            },
+            error: function(xhr) {
+                alert('Something went wrong!');
+            }
+        });
+    });
+</script>
 
 </html>
