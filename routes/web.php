@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\admin\ContactUsController;
 use App\Http\Controllers\admin\ServiceController;
-use App\Http\Controllers\admin\SitemapController;
 use App\Http\Controllers\admin\WorkController;
 use App\Http\Controllers\front\IndexController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +22,6 @@ Route::view('/', 'front.index')->name('front');
 Route::view('about', 'front.about')->name('front.about');
 Route::view('contact', 'front.contact')->name('front.contact');
 Route::view('our-work', 'front.our-work')->name('front.work');
-Route::get('/post/{id}/{slug}', [HomeController::class, 'single'])->name('front.single');
 Route::post('contact',[IndexController::class,'storeContact'])->name('store.contact');
 // Route::get('/', function () {
 //     return view('auth/login');
