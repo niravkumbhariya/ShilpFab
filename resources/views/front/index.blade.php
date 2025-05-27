@@ -4,16 +4,7 @@
 @endsection
 @section('content')
     <div class="main-wrapper">
-        <header class="header">
-            <div class="left-section">
-                <div class="logo">
-                    <a href="{{ route('front') }}">
-                        <img src="{{ asset('public/front/images/logo.png') }}" alt="logo">
-                    </a>
-                </div>
-            </div>
-            @include('front.layouts.navbar')
-        </header>
+        @include('front.layouts.navbar')
 
         <div class="hero-banner">
             <div class="banner-wrapper">
@@ -102,8 +93,7 @@
                 <div class="left-section">
                     <div class="heading-section">
                         <h3 class="sub-title">Get In Touch</h3>
-                        <h1 class="main-title">We're here to help! Reach out today and let’s bring your fabrication ideas to
-                            life.</h1>
+                        <h1 class="main-title">We're here to help!</h1>
                     </div>
                 </div>
 

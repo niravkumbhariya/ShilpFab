@@ -5,17 +5,7 @@
 @section('content')
     <div class="main-wrapper">
 
-        <header class="header">
-            <div class="left-section">
-                <div class="logo">
-                    <a href="{{ route('front.contact') }}">
-                        <img src="{{ asset('public/front/images/logo.png') }}" alt="logo">
-                    </a>
-                </div>
-            </div>
-
-            @include('front.layouts.navbar')
-        </header>
+        @include('front.layouts.navbar')
 
         <div class="small-hero-banner contact-banner">
             <div class="container">

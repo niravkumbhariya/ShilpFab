@@ -20,6 +20,7 @@ header .logo img {
 .nav-section ul {
     display: flex;
     column-gap: 30px;
+    row-gap: 20px;
     align-items: center;
 }
 .nav-section ul li {
@@ -35,6 +36,45 @@ header .logo img {
 
 .nav-section .btn-primary {
     color: var(--color-white);
+}
+
+.hamburger-menu {
+    max-width: 30px;
+    width: 100%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
+.hamburger-menu:before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 11px;
+    left: 0;
+    background: var(--color-black);
+    transition: 0.3s ease-in-out;
+}
+.hamburger-menu:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    background: var(--color-black);
+    transition: 0.3s ease-in-out;
+}
+.hamburger-menu.active:before {
+    transform: rotate(45deg) translateY(8px);
+}
+.hamburger-menu.active:after {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+.hamburger-active body {
+    overflow-y: hidden;
 }
 
 .hero-banner {
@@ -143,11 +183,15 @@ header .logo img {
 }
 .about-us-section .container {
     display: flex;
-    column-gap: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
 }
 .about-us-section .left-section {
-    max-width: 51.71%;
+    max-width: 50%;
     width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
     position: relative;
 }
 .about-us-section .left-section:before {
@@ -161,11 +205,10 @@ header .logo img {
     z-index: 1;
 }
 .about-us-section .left-section img {
-    border-radius: 12px;
-    overflow: hidden;
+    object-fit: cover;
 }
 .about-us-section .right-section {
-    max-width: 45%;
+    max-width: 47%;
     width: 100%;
     padding-bottom: 80px;
 }
@@ -178,6 +221,7 @@ header .logo img {
     border-radius: 12px;
     padding: 20px 40px;
     display: flex;
+    flex-wrap: wrap;
     width: 90%;
     margin-left: -180px;
     margin-top: 50px;
@@ -251,7 +295,7 @@ header .logo img {
 
 .more-info-section {
     width: 60%;
-    height: 240px;
+    padding: 40px 0;
     background: var(--primary-color);
     position: relative;
     z-index: 2;
@@ -259,6 +303,8 @@ header .logo img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
 }
 .more-info-section .info-box {
     max-width: calc(100% / 3);
@@ -291,6 +337,7 @@ header .logo img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .getintouch-section .left-section {
     max-width: 48%;
@@ -334,6 +381,10 @@ footer {
 }
 footer .container {
     display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 40px;
+    justify-content: space-between;
 }
 footer .left-section .logo {
     max-width: 150px;
@@ -364,21 +415,19 @@ footer .social-links img {
     height: auto;
     filter: invert(47%) sepia(76%) saturate(281%) hue-rotate(133deg) brightness(92%) contrast(93%);
 }
-footer .useful-links {
-    margin-left: auto;
-    margin-right: 80px;
-}
+
 footer .useful-links ul li,
 footer .services-links ul li {
     margin-bottom: 20px;
     color: var(--color-white);
 }
+footer .useful-links ul li:last-child,
+footer .services-links ul li:last-child {
+    margin-bottom: 0;
+}
 footer .useful-links ul li a {
     color: var(--color-white);
     text-decoration: none;
-}
-footer .services-links {
-    margin-right: 80px;
 }
 footer .links-label {
     font-size: 16px;
@@ -525,4 +574,232 @@ footer .footer-bottom p {
     height:100%;
     width:100%;
     position:absolute;
+}
+
+@media only screen and (max-width: 767px) {
+    header .logo {
+        max-width: 100px;
+    }
+    .hamburger-menu {
+        display: block;
+    }
+    .nav-section {
+        position: absolute;
+        top: 55px;
+        right: -100%;
+        background: var(--color-white);
+        width: 80vw;
+        height: 100%;
+        padding: 20px;
+        z-index: 99;
+        transition: 0.5s ease-in-out;
+    }
+    .nav-section ul {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .hamburger-active .nav-section {
+        right: 0;
+    }
+
+    .hero-banner,
+    .product-list-section,
+    .about-us-section,
+    .getintouch-section,
+    .small-hero-banner {
+        margin-bottom: 40px;
+    }
+
+    .heading-section .sub-title {
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .heading-section .main-title {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .heading-section {
+        margin-bottom: 30px;
+    }
+
+    .about-us-section .about-us-content-wrapper {
+        text-align: center;
+    }
+    .about-us-section .left-section,
+    .about-us-section .right-section {
+        max-width: 100%;
+    }
+    .about-us-section .right-section .heading-section {
+        text-align: center;
+    }
+    .about-us-section .experience-box {
+        margin-top: 20px;
+    }
+    .about-us-section .experience-box {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .about-us-section .experience-box .exp-years {
+        font-size: 50px;
+    }
+    .about-us-section .exp-text {
+        margin-left: 0;
+    }
+    .about-us-section .exp-text span {
+        font-size: 18px; 
+    }
+    .about-us-section .exp-text p {
+        font-size: 30px;
+    }
+    .about-us-section .right-section {
+        padding-bottom: 0;
+    }
+
+    .videoembed-setion .video-text {
+        max-width: 90%;
+        font-size: 28px;
+        line-height: 38px;
+    }
+    .videoembed-setion {
+        padding-bottom: 130%;
+    }
+
+    .more-info-section {
+        margin: -100px auto 40px;
+    }
+    .more-info-section .info-box {
+        max-width: 100%;
+    }
+
+    .getintouch-section .heading-section {
+        text-align: center;
+    }
+    .getintouch-section .left-section,
+    .getintouch-section .form-section {
+        max-width: 100%;
+    }
+
+    footer .left-section .logo {
+        max-width: 100px;
+    }
+
+    .small-hero-banner {
+        height: 200px;
+    }
+    .small-hero-banner.contact-banner h1 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    .small-hero-banner.contact-banner p {
+        line-height: 22px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    header .logo {
+        max-width: 100px;
+    }
+
+    .hero-banner,
+    .product-list-section,
+    .about-us-section,
+    .getintouch-section,
+    .small-hero-banner {
+        margin-bottom: 40px;
+    }
+
+    .heading-section .sub-title {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .heading-section .main-title {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .heading-section {
+        margin-bottom: 30px;
+    }
+
+    .about-us-section .right-section {
+        padding-bottom: 40px;
+    }
+    .about-us-section .experience-box {
+        max-width: 343px;
+        margin-top: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    .about-us-section .exp-text {
+        margin-left: 20px;
+    }
+    .about-us-section .experience-box .exp-years {
+        font-size: 40px;
+    }
+    .about-us-section .exp-text span {
+        font-size: 18px;
+    }
+    .about-us-section .exp-text p {
+        font-size: 30px;
+        line-height: 38px;
+    }
+
+    .videoembed-setion {
+        padding-bottom: 46%;
+    }
+    .videoembed-setion .video-text {
+        font-size: 28px;
+        line-height: 38px;
+        max-width: 80%;
+    }
+
+    .more-info-section {
+        width: 90%;
+        margin: -70px auto 40px;
+    }
+    .more-info-section .info-box .info-image {
+        max-width: 60px;
+    }
+    .more-info-section .info-box h5 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .small-hero-banner.contact-banner h1 {
+        font-size: 36px;
+        line-height: 40px;
+    }
+    .small-hero-banner.contact-banner p {
+        line-height: 22px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1239px) {
+    .about-us-section .exp-text {
+        margin-left: 20px;
+    }
+    .about-us-section .experience-box .exp-years {
+        font-size: 65px;
+    }
+    .about-us-section .exp-text span {
+        font-size: 20px;
+    }
+    .about-us-section .exp-text p {
+        font-size: 30px;
+    }
+
+    .videoembed-setion {
+        padding-bottom: 46%;
+    }
+
+    .more-info-section {
+        width: 80%;
+    }
+
+    footer .left-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 }
