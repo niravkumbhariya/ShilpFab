@@ -19,4 +19,10 @@ $(document).ready(function(){
 	        }
 	    }
 	});
+
+	// hamburger menu
+	$('.hamburger-menu').on('click', function () {
+    	$(this).toggleClass('active');
+    	$('html').toggleClass('hamburger-active');
+  	});
 });
