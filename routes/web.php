@@ -5,6 +5,8 @@ use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\WorkController;
 use App\Http\Controllers\front\IndexController;
+use App\Mail\ContactThanksMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -65,5 +67,13 @@ Route::group(['prefix' => 'admin/contacts', 'middleware' => ['auth'],], function
 });
 
 
+Route::get('/test-mail', function () {
+    // Mail::raw('Test email from cPanel SMTP.', function ($message) {
+    //     $message->to('lakummahendra654@gmail.com')
+    //             ->subject('Test Email');
+    // });
 
+    Mail::to('lakummahendra654@gmail.com')->send(new ContactThanksMail('John Doe'));
 
+    return 'Mail sent!';
+});
