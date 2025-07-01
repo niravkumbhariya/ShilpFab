@@ -1,8 +1,8 @@
-<header class="header abc">
+<header class="header">
     <div class="left-section">
         <div class="logo">
             <a href="{{ route('front') }}">
-                <img src="{{ asset('public/front/images/logo.png') }}" alt="logo">
+                <img src="{{ asset('public/front/images/Shilp-Fab-Logo-1.png') }}" alt="logo">
             </a>
         </div>
     </div>

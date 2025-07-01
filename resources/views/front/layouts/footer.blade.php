@@ -1,23 +1,22 @@
-<footer>
+<footer data-aos="fade-up" data-aos-duration="2000">
     <div class="container">
         <div class="left-section">
             <img src="{{ asset('public/front/images/logo.png') }}" alt="logo" class="logo">
-            <p class="highlight-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </p>
+            <p class="highlight-text">We don’t just make moulds — we shape the foundation of your success.</p>
             <div class="social-links">
                 <ul>
-                    <li><a href="#"><img src="{{ asset('public/front/images/facebook.svg') }}"></a></li>
-                    <li><a href="#"><img src="{{ asset('public/front/images/whatsapp.svg') }}"></a></li>
+                    <li><a href="#"><img src="{{ asset('public/front/images/facebook.svg') }}" title="facebook"></a></li>
+                    <li><a href="https://wa.me/9825821951" target="_blank" title="9825821951"><img src="{{ asset('public/front/images/whatsapp.svg') }}"></a></li>
                 </ul>
             </div>
         </div>
         <div class="useful-links">
             <h6 class="links-label">Company Links</h6>
             <ul>
-                <li><a href="{{route('front')}}">Home</a></li>
-                <li><a href="{{route('front.work')}}">Our Works</a></li>
-                <li><a href="{{route('front.about')}}">About Us</a></li>
-                <li><a href="{{route('front.contact')}}">Contact Us</a></li>
+                <li><a href="{{route('front')}}" title="Home">Home</a></li>
+                <li><a href="{{route('front.work')}}" title="Our Works">Our Works</a></li>
+                <li><a href="{{route('front.about')}}" title="About Us">About Us</a></li>
+                <li><a href="{{route('front.contact')}}" title="Contact Us">Contact Us</a></li>
             </ul>
         </div>
         <div class="services-links">
@@ -34,26 +33,23 @@
             <ul>
                 <li>
                     <!-- <p>Have any Questions ?</p> -->
-                    <div class="links-icons"><img src="{{ asset('public/front/images/phone.svg') }}"
-                            alt="phone"></div>
-                    <a href="tel:+911234567890">+91 98258 21951</a>
+                    <div class="links-icons"><img src="{{ asset('public/front/images/phone.svg') }}" alt="phone"></div>
+                    <a href="tel:+9198258 21951" title="+91 9825821951">+91 98258 21951</a>
                 </li>
                 <li>
                     <!-- <p>Get in touch with us</p> -->
-                    <div class="links-icons"><img src="{{ asset('public/front/images/email.svg') }}"
-                            alt="email"></div>
-                    <a href="mailto:test@gmail.com">test@gmail.com </a>
+                    <div class="links-icons"><img src="{{ asset('public/front/images/email.svg') }}" alt="email"></div>
+                    <a href="mailto:test@gmail.com" title="test@gmail.com">test@gmail.com </a>
                 </li>
                 <li>
                     <!-- <p>You can find us at</p> -->
-                    <div class="links-icons"><img src="{{ asset('public/front/images/pin.svg') }}"
-                            alt="location"></div>
+                    <div class="links-icons"><img src="{{ asset('public/front/images/pin.svg') }}" alt="location"></div>
                     <address>D-107/A, Almighty Gate, GIDC Lodhika, Metoda, Metoda, Gujarat 360021</address>
                 </li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 <strong>ShilpFab</strong>. All Rights Reserved.</p>
+        <p>© 2025 <strong>ShilpFab</strong><sup>TM</sup>. All Rights Reserved.</p>
     </div>
 </footer>

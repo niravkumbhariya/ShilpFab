@@ -1,4 +1,4 @@
-<div class="form-section">
+<div class="form-section" data-aos="fade-left" data-aos-duration="2000">
     <form id="contact-form" action="{{ route('store.contact') }}" method="POST">
         @csrf
         <div class="input-group">

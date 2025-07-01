@@ -18,8 +18,8 @@
         <div class="container">
             <div class="product-list-wrapper">
                 @foreach ($works as $work)
-                <div class="product-box">
-                    <div class="img-wrapper" style="height: 200px;">
+                <div class="product-box" data-aos="fade-up" data-aos-duration="2000">
+                    <div class="img-wrapper">
                         <img src="{{asset("public/storage/works/$work->image")}}" alt="Our Work">
                     </div>
                     <div class="service-content-wrapper">

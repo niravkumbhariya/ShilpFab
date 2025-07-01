@@ -1,5 +1,5 @@
 * {margin: 0; padding: 0; box-sizing: border-box; }
-body {font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.4; letter-spacing: 1px; }
+body {font-family: 'Montserrat', serif; font-size: 16px; line-height: 1.4; letter-spacing: 1px; overflow-x: hidden;}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; }
 ol, ul {list-style: none; }

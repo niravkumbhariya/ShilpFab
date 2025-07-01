@@ -7,21 +7,27 @@
         @include('front.layouts.navbar')
 
         <div class="hero-banner">
-            <div class="banner-wrapper">
+            <div class="banner-wrapper owl-carousel owl-theme">
                 <img src="{{ asset('public/front/images/hero-banner.png') }}" atr="hero banner">
+                <img src="{{ asset('public/front/images/hero-banner-02.jpg') }}" atr="hero banner">
+                <img src="{{ asset('public/front/images/hero-banner-03.jpg') }}" atr="hero banner">
+            </div>
+            <div class="banner-content">
+                <h1>Crafting Precision, Building the Future</h1>
+                <p>ShilpFab specialises in the design and manufacturing of high-quality fabrication moulds</p>
             </div>
         </div>
 
         <div class="product-list-section our-services-section">
             <div class="container">
                 <div class="heading-section">
-                    <h3 class="sub-title">Our Services</h3>
-                    <h1 class="main-title">Specialist Mould Services</h1>
+                    <h3 class="sub-title" data-aos="fade-right" data-aos-duration="2000">Our Services</h3>
+                    <h1 class="main-title" data-aos="fade-left" data-aos-duration="2000">Specialist Mould Services</h1>
                 </div>
                 <div class="product-list-wrapper service-box-wrapper owl-carousel owl-theme">
 
                     @foreach ($services as $service)
-                        <div class="product-box service-box">
+                        <div class="product-box service-box" data-aos="fade-up" data-aos-duration="2000">
                             <div class="img-wrapper">
                                 <img src="{{ asset("public/storage/services/$service->image") }}" alt="service">
                             </div>
@@ -37,21 +43,19 @@
 
         <div class="about-us-section">
             <div class="container">
-                <div class="left-section">
+                <div class="left-section" data-aos="fade-right" data-aos-duration="2000">
                     <img src="{{ asset('public/front/images/img01.jpg') }}" alt="about-us">
                 </div>
                 <div class="right-section">
                     <div class="heading-section">
-                        <h3 class="sub-title">About Us</h3>
-                        <h1 class="main-title">Shipping that exceeds Expectations.</h1>
+                        <h3 class="sub-title" data-aos="fade-left" data-aos-duration="2000">About Us</h3>
+                        <h1 class="main-title" data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds Expectations.</h1>
                     </div>
                     <div class="about-us-content-wrapper">
-                        <p>Shipping that exceeds expectations refers to the process of delivering goods to customers in a
-                            way that goes above and beyond their initial expectations. This can include various factors.</p>
-                        <p>Shipping that exceeds expectations refers to the process of delivering goods to customers in a
-                            way that goes above and beyond their initial expectations. This can include various factors.</p>
+                        <p data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds expectations refers to the process of delivering goods to customers in a way that goes above and beyond their initial expectations. This can include various factors.</p>
+                        <p data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds expectations refers to the process of delivering goods to customers in a way that goes above and beyond their initial expectations. This can include various factors.</p>
 
-                        <div class="experience-box">
+                        <div class="experience-box" data-aos="fade-left" data-aos-duration="2000">
                             <div class="exp-years">20+</div>
                             <div class="exp-text">
                                 <span>Years Working</span>
@@ -70,7 +74,7 @@
             </video>
             <h4 class="video-text">We should move together and Feel the experience</h4>
         </div>
-        <div class="more-info-section">
+        <div class="more-info-section" data-aos="fade-up" data-aos-duration="2000">
             <div class="info-box">
                 <img src="{{ asset('public/front/images/visitor.svg') }}" class="info-image" alt="user">
                 <h5>{{$totalVisitors}}</h5>
@@ -92,11 +96,10 @@
             <div class="container">
                 <div class="left-section">
                     <div class="heading-section">
-                        <h3 class="sub-title">Get In Touch</h3>
-                        <h1 class="main-title">We're here to help!</h1>
+                        <h3 class="sub-title" data-aos="fade-right" data-aos-duration="2000">Get In Touch</h3>
+                        <h1 class="main-title" data-aos="fade-right" data-aos-duration="2000">We're here to help!</h1>
                     </div>
                 </div>
-
                 @include('front.contact-form')
             </div>
         </div>
