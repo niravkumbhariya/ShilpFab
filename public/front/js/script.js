@@ -1,20 +1,43 @@
 $(document).ready(function(){
+	
+	var headerHeight = $('header').outerHeight();
+	$('.main-wrapper').css('padding-top', headerHeight + 'px');
+
+	$(window).resize(function () {
+    	var newHeaderHeight = $('header').outerHeight();
+    	$('.main-wrapper').css('padding-top', newHeaderHeight + 'px');
+  	});
+
+	$('.banner-wrapper').owlCarousel({
+	    loop:true,
+	    nav:false,
+	    dots: false,
+	    autoplay:true,
+		autoplayTimeout:4000,
+		animateOut: 'fadeOut',
+		items: 1
+	});
+
 	$('.service-box-wrapper').owlCarousel({
 	    loop:true,
 	    margin:15,
 	    nav:false,
-	    dots: false,
+	    dots: true,
 	    autoplay:true,
 		autoplayTimeout:5000,
 		autoplayHoverPause:true,
 	    responsive:{
 	        0:{
-	            items:1
+	            items:1,
+	            nav:false
 	        },
-	        600:{
-	            items:3
+	        768:{
+	            items:2
 	        },
-	        1000:{
+	        991: {
+	        	items:3
+	        },
+	        1200:{
 	            items:4
 	        }
 	    }
@@ -25,4 +48,7 @@ $(document).ready(function(){
     	$(this).toggleClass('active');
     	$('html').toggleClass('hamburger-active');
   	});
+
+	// scroll animation aos js
+  	AOS.init();
 });

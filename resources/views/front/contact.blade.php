@@ -16,7 +16,7 @@
 
         <div class="getintouch-section">
             <div class="container">
-                <div class="left-section">
+                <div class="left-section" data-aos="fade-right" data-aos-duration="2000">
                     <div class="heading-section">
                         <h3 class="sub-title">Get In Touch</h3>
                         <h1 class="main-title">We're here to help! Reach out today and let’s bring your fabrication ideas to
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        <div class="map-section">
+        <div class="map-section" data-aos="fade-up" data-aos-duration="2000">
             <div class="responsive-map">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.8858510054138!2d70.6821908!3d22.2444094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959cc563d6d8d33%3A0x9ab29a0925e7e8b8!2sShilp%20Fab!5e0!3m2!1sen!2sin!4v1742492914292!5m2!1sen!2sin"
