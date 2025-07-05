@@ -54,6 +54,6 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 <strong>ShilpFab</strong>. All Rights Reserved.</p>
+        <p>© {{date('Y')}} <strong>ShilpFab</strong>. All Rights Reserved.</p>
     </div>
 </footer>
