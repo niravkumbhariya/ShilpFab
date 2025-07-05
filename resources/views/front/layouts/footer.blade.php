@@ -1,7 +1,7 @@
 <footer data-aos="fade-up" data-aos-duration="2000">
     <div class="container">
         <div class="left-section">
-            <img src="{{ asset('public/front/images/logo.png') }}" alt="logo" class="logo">
+            <img src="{{ asset('public/front/images/footer-logo.png') }}" alt="logo" class="logo">
             <p class="highlight-text">We don’t just make moulds — we shape the foundation of your success.</p>
             <div class="social-links">
                 <ul>

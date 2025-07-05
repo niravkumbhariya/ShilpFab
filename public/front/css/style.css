@@ -35,11 +35,13 @@ header .logo img {
     color: var(--color-black);
     text-decoration: none;
 }
-.nav-section ul li a:hover,
-.nav-section ul li a.active {
+.nav-section ul li a:hover {
     color: var(--primary-color);
 }
-
+.nav-section ul li a.active {
+    color: var(--primary-color);
+    font-weight: 500;
+}
 .nav-section .btn-primary {
     color: var(--color-white);
 }
