@@ -8,7 +8,7 @@
 
         <div class="hero-banner">
             <div class="banner-wrapper owl-carousel owl-theme">
-                <img src="{{ asset('public/front/images/hero-banner.png') }}" atr="hero banner">
+                <img src="{{ asset('public/front/images/mould01.jpg') }}" atr="hero banner">
                 <img src="{{ asset('public/front/images/hero-banner-02.jpg') }}" atr="hero banner">
                 <img src="{{ asset('public/front/images/hero-banner-03.jpg') }}" atr="hero banner">
             </div>
@@ -56,7 +56,7 @@
                         <p data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds expectations refers to the process of delivering goods to customers in a way that goes above and beyond their initial expectations. This can include various factors.</p>
 
                         <div class="experience-box" data-aos="fade-left" data-aos-duration="2000">
-                            <div class="exp-years">20+</div>
+                            <div class="exp-years">12+</div>
                             <div class="exp-text">
                                 <span>Years Working</span>
                                 <p>Experience</p>
@@ -69,8 +69,8 @@
 
         <div class="videoembed-setion">
             <video class="videoembed" autoplay muted loop>
-                <source src="{{ asset('public/front/images/work-video.mp4') }}" type="video/mp4">
-                <source src="{{ asset('public/front/images/work-video.ogg') }}" type="video/ogg">
+                <source src="{{ asset('public/front/images/work-video-01.mp4') }}" type="video/mp4">
+                <source src="{{ asset('public/front/images/work-video-01.ogg') }}" type="video/ogg">
             </video>
             <h4 class="video-text">We should move together and Feel the experience</h4>
         </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="info-box">
                 <img src="{{ asset('public/front/images/closure.svg') }}" class="info-image" alt="Successful Projects">
-                <h5>10k+</h5>
+                <h5>50+</h5>
                 <p>Successful Projects</p>
             </div>
             <div class="info-box">
