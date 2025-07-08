@@ -1,11 +1,10 @@
 <footer data-aos="fade-up" data-aos-duration="2000">
     <div class="container">
         <div class="left-section">
-            <img src="{{ asset('public/front/images/footer-logo.png') }}" alt="logo" class="logo">
+            <img src="{{ asset('public/front/images/ShilpFab-Logo-footer.png') }}" alt="logo" class="logo">
             <p class="highlight-text">We don’t just make moulds — we shape the foundation of your success.</p>
             <div class="social-links">
                 <ul>
-                    <li><a href="#"><img src="{{ asset('public/front/images/facebook.svg') }}" title="facebook"></a></li>
                     <li><a href="https://wa.me/9825821951" target="_blank" title="9825821951"><img src="{{ asset('public/front/images/whatsapp.svg') }}"></a></li>
                 </ul>
             </div>
@@ -22,10 +21,10 @@
         <div class="services-links">
             <h6 class="links-label">Our Services</h6>
             <ul>
-                <li>R E Well Mould</li>
-                <li>Cross breyer mould</li>
-                <li>Friction slab with cross beryer</li>
-                <li>Bountry wall collam mould</li>
+                <li>R E Wall Mould</li>
+                <li>Friction Slab With Crash Barrier</li>
+                <li>Boundary Wall Column Mould</li>
+                <li>Pipe Rack Mould</li>
             </ul>
         </div>
         <div class="connect-links">

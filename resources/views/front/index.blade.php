@@ -9,7 +9,6 @@
         <div class="hero-banner">
             <div class="banner-wrapper owl-carousel owl-theme">
                 <img src="{{ asset('public/front/images/mould01.jpg') }}" atr="hero banner">
-                <img src="{{ asset('public/front/images/hero-banner-02.jpg') }}" atr="hero banner">
                 <img src="{{ asset('public/front/images/hero-banner-03.jpg') }}" atr="hero banner">
             </div>
             <div class="banner-content">
@@ -52,8 +51,10 @@
                         <h1 class="main-title" data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds Expectations.</h1>
                     </div>
                     <div class="about-us-content-wrapper">
+                        <p data-aos="fade-left" data-aos-duration="2000">With over 12+ years of experience in the fabrication industry, we specialize in crafting high-quality, precision-engineered moulds for a wide range of construction and infrastructure projects.</p>
                         <p data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds expectations refers to the process of delivering goods to customers in a way that goes above and beyond their initial expectations. This can include various factors.</p>
-                        <p data-aos="fade-left" data-aos-duration="2000">Shipping that exceeds expectations refers to the process of delivering goods to customers in a way that goes above and beyond their initial expectations. This can include various factors.</p>
+                        <p data-aos="fade-left" data-aos-duration="2000">Every product we deliver reflects our commitment to innovation, quality workmanship, and on-time delivery.</p>
+                        <p data-aos="fade-left" data-aos-duration="2000">We don’t just build moulds — <strong>We build the foundation of tomorrow’s infrastructure.</strong></p>
 
                         <div class="experience-box" data-aos="fade-left" data-aos-duration="2000">
                             <div class="exp-years">12+</div>

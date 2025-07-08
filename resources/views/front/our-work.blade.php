@@ -7,7 +7,7 @@
 
     @include('front.layouts.navbar')
 
-    <div class="small-hero-banner contact-banner">
+    <div class="small-hero-banner our-work-banner">
         <div class="container">
             <h1>Our Works</h1>
             <p>ShilpFab is ready to provide you fabric mould according to your needs</p>
