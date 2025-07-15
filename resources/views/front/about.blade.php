@@ -19,7 +19,7 @@
                 <div class="box-wrapper">
                     <div class="left-section">
                         <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/MD-Jitendra-Gajjar.png') }}" alt="Jitendra Gajjar">
+                            <img src="{{ asset('public/front/images/images.jpeg') }}" alt="Jitendra Gajjar">
                             <div class="md-details">
                                 <h3>Jitendra Gajjar</h3>
                                 <p>managing director</p>
