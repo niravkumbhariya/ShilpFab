@@ -182,6 +182,9 @@ header .logo img {
     border-radius: 12px;
     overflow: hidden;
 }
+.product-list-wrapper .product-box a {
+    text-decoration: none;
+}
 .product-list-wrapper .product-box .img-wrapper {
     width: 100%;
     height: 200px;

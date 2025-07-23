@@ -19,13 +19,17 @@
             <div class="product-list-wrapper">
                 @foreach ($works as $work)
                 <div class="product-box" data-aos="fade-up" data-aos-duration="2000">
-                    <div class="img-wrapper">
-                        <img src="{{asset("public/storage/works/$work->image")}}" alt="Our Work">
-                    </div>
-                    <div class="service-content-wrapper">
-                        <h2 class="service-name">{{$work->title}}</h2>
-                        <p>{!! Str::limit($work->desc,300,'...') !!}</p>
-                    </div>
+                    <a data-fancybox="gallery1" href="images/product1-img1.jpg">
+                        <div class="img-wrapper">
+                            <img src="{{asset("public/storage/works/$work->image")}}" alt="Our Work">
+                        </div>
+                        <div class="service-content-wrapper">
+                            <h2 class="service-name">{{$work->title}}</h2>
+                            <p>{!! Str::limit($work->desc,300,'...') !!}</p>
+                        </div>
+                    </a>
+                    <a data-fancybox="gallery1" href="http://shilpfab.com/public/storage/services/1751864621_0frju1k6tX.jpg" style="display:none;"></a>
+                    <a data-fancybox="gallery1" href="http://shilpfab.com/public/storage/services/1751863985_2XuCtn7hx0.jpg" style="display:none;"></a>
                 </div>
                 @endforeach
             </div>

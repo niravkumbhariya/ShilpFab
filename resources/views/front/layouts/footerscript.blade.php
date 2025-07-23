@@ -2,3 +2,4 @@
 <script type="text/javascript" src="{{ asset('public/front/js/script.js') }}"></script>
 <script type="text/javascript" src="{{ asset('public/front/js/owl.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('public/front/js/aos.js') }}"></script>
+<script src="{{ asset('public/front/js/fancybox.umd.js') }}"></script>
