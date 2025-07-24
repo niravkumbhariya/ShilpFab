@@ -19,12 +19,13 @@
             </ul>
         </div>
         <div class="services-links">
-            <h6 class="links-label">Our Services</h6>
+            <h6 class="links-label">Mould Manufacturing</h6>
             <ul>
-                <li>R E Wall Mould</li>
+                <li>RE Wall</li>
                 <li>Friction Slab With Crash Barrier</li>
-                <li>Boundary Wall Column Mould</li>
-                <li>Pipe Rack Mould</li>
+                <li>Girder</li>
+                <li>Boundary Wall Column</li>
+                <li>Pipe Rack</li>
             </ul>
         </div>
         <div class="connect-links">
@@ -43,12 +44,12 @@
                 <li>
                     <!-- <p>You can find us at</p> -->
                     <div class="links-icons"><img src="{{ asset('public/front/images/pin.svg') }}" alt="location"></div>
-                    <address>D-107/A, Almighty Gate, GIDC Lodhika, Metoda, Metoda, Gujarat 360021</address>
+                    <address>Plot No. D-107/A, Almighty Gate, Lodhika GIDC, Metoda-360021, Dist. Rajkot, (Gujarat - INDIA). </address>
                 </li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© {{date('Y')}} <strong>ShilpFab</strong>. All Rights Reserved.</p>
+        <p>© {{date('Y')}} <strong>Shilp Fab</strong>. All Rights Reserved.</p>
     </div>
 </footer>

@@ -10,7 +10,7 @@
     <div class="small-hero-banner our-work-banner">
         <div class="container">
             <h1>Our Works</h1>
-            <p>ShilpFab is ready to provide you fabrication mould according to your needs</p>
+            <p>Shilp Fab is ready to provide you fabrication mould according to your needs</p>
         </div>
     </div>
 

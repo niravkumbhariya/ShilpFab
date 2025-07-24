@@ -10,7 +10,7 @@
         <div class="small-hero-banner contact-banner">
             <div class="container">
                 <h1>Contact Us</h1>
-                <p>ShilpFab is ready to provide you fabric mould according to your needs</p>
+                <p>Shilp Fab is ready to provide you fabric mould according to your needs</p>
             </div>
         </div>
 
@@ -37,7 +37,7 @@
                             <li>
                                 <div class="links-icons"><img src="{{ asset('public/front/images/pin.svg') }}"
                                         alt="location"></div>
-                                <address>D-107/A, Almighty Gate, GIDC Lodhika, Metoda, Metoda, Gujarat 360021</address>
+                                <address>Plot No. D-107/A, Almighty Gate, Lodhika GIDC, Metoda-360021, Dist. Rajkot, (Gujarat - INDIA).</address>
                             </li>
                         </ul>
                     </div>
