@@ -17,28 +17,19 @@
         <div class="about-us-wrapper" data-aos="fade-right" data-aos-duration="2000">
             <div class="container">
                 <div class="box-wrapper">
-                    <div class="left-section">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('public/front/images/images.jpeg') }}" alt="Jitendra Gajjar">
-                            <div class="md-details">
-                                <h3>Jitendra Gajjar</h3>
-                                <p>managing director</p>
-                            </div>
-                        </div>
-                    </div>
                     <div class="right-section">
                         <p>At <strong>Shilp Fab</strong>, we bring ideas to life through precision-engineered moulds tailored for the evolving demands of the precast industry. With over <strong>15 years of expertise</strong>, we have established ourselves as a trusted name in the fabrication of high-quality and durable moulds.</p>
 
                         <p>Our facility is equipped with cutting-edge technology and a dedicated team of skilled professionals committed to delivering mould solutions that meet the highest standards of <strong>quality, durability, and performance.</strong> From standard designs to fully customized moulds, we ensure each product is manufactured to meet specific project needs with accuracy and efficiency.</p>
 
-                        <p><strong>Our Core Product Range Includes:</strong></p>
+                        <p><strong>Our Precast Mould Range Includes:</strong></p>
 
                         <ul>
-                            <li>RE Wall Moulds</li>
+                            <li>RE Wall</li>
                             <li>Friction Slabs with Crash Barrier</li>
-                            <li>Girder Moulds</li>
-                            <li>Boundary Wall Column Moulds</li>
-                            <li>Pipe Rack Mould</li>
+                            <li>Girder</li>
+                            <li>Boundary Wall</li>
+                            <li>Pipe Rack</li>
                         </ul>
                     </div>
                 </div>
