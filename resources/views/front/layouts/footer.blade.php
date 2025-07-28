@@ -1,7 +1,7 @@
 <footer data-aos="fade-up" data-aos-duration="2000">
     <div class="container">
         <div class="left-section">
-            <img src="{{ asset('public/front/images/ShilpFab-Logo-footer.png') }}" alt="logo" class="logo">
+            <img src="{{ asset('public/front/images/ShilpFab-Logo-footer2.png') }}" alt="logo" class="logo">
             <p class="highlight-text">We don’t just make moulds — we shape the foundation of your success.</p>
             <div class="social-links">
                 <ul>
@@ -39,7 +39,7 @@
                 <li>
                     <!-- <p>Get in touch with us</p> -->
                     <div class="links-icons"><img src="{{ asset('public/front/images/email.svg') }}" alt="email"></div>
-                    <a href="mailto:test@gmail.com" title="test@gmail.com">test@gmail.com </a>
+                    <a href="mailto:info@shilpfab.com" title="info@shilpfab.com">info@shilpfab.com</a>
                 </li>
                 <li>
                     <!-- <p>You can find us at</p> -->

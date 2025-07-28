@@ -69,10 +69,11 @@
         </div>
 
         <div class="videoembed-setion">
-            <video class="videoembed" autoplay muted loop>
+            <!-- <video class="videoembed" autoplay muted loop>
                 <source src="{{ asset('public/front/images/work-video-01.mp4') }}" type="video/mp4">
                 <source src="{{ asset('public/front/images/work-video-01.ogg') }}" type="video/ogg">
-            </video>
+            </video> -->
+            
             <h4 class="video-text">We should move together and Feel the experience</h4>
         </div>
         <div class="more-info-section" data-aos="fade-up" data-aos-duration="2000">

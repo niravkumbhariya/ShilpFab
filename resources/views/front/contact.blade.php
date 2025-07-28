@@ -32,7 +32,7 @@
                             <li>
                                 <div class="links-icons"><img src="{{ asset('public/front/images/email.svg') }}"
                                         alt="email"></div>
-                                <a href="mailto:test@gmail.com">test@gmail.com </a>
+                                <a href="mailto:info@shilpfab.com">info@shilpfab.com</a>
                             </li>
                             <li>
                                 <div class="links-icons"><img src="{{ asset('public/front/images/pin.svg') }}"
