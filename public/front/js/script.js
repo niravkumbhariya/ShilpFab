@@ -19,13 +19,11 @@ $(document).ready(function(){
 	});
 
 	$('.service-box-wrapper').owlCarousel({
-	    loop:true,
+	    loop:false,
 	    margin:15,
 	    nav:false,
 	    dots: true,
-	    autoplay:true,
-		autoplayTimeout:5000,
-		autoplayHoverPause:true,
+	    autoplay:false,
 	    responsive:{
 	        0:{
 	            items:1,
