@@ -59,6 +59,28 @@
                                 </div>
                             </div>
 
+                            <!-- Multiple Image Upload Option (Full Row) -->
+                            <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="images">Upload Multiple Images:</label>
+                                    <input type="file" class="form-control" id="images" name="images[]" multiple>
+                                    <span class="error"> {{ $errors->first('images') }}</span>
+                                    <br />
+                                    @if (isset($work->images) && $work->images->count() > 0)
+                                        <div class="row mt-3">
+                                            @foreach ($work->images as $img)
+                                                <div class="col-md-2 col-4 mb-3 text-center">
+                                                    <div class="border rounded shadow-sm">
+                                                        <img src="{{ asset('public/storage/works/' . $img->image) }}"
+                                                            class="img-fluid rounded"
+                                                            style="width:80%;">
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="desc">Description: *</label>

@@ -7,6 +7,7 @@ use App\Models\Work;
 use App\Helper\Helper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\WorkImages;
 use Illuminate\Support\Facades\Storage;
 
 class WorkController extends Controller
@@ -89,6 +90,8 @@ class WorkController extends Controller
         return view($this->view . '_form', compact('work', 'moduleName'));
     }
 
+
+
     public function update(Request $request, $id)
     {
         $work = Work::findOrFail($id);
@@ -97,28 +100,44 @@ class WorkController extends Controller
             'title' => 'required|string|max:255',
             'desc' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         $work->title = $request->title;
         $work->desc = $request->desc;
 
-        // Handle new image upload
+        // Single image (main image)
         if ($request->hasFile('image')) {
-            // Delete old image
             if ($work->image && Storage::exists("public/works/{$work->image}")) {
                 Storage::delete("public/works/{$work->image}");
             }
 
-            // Upload new image
             $fileName = Helper::fileUpload($request, 'image', 'works');
             $work->image = $fileName;
         }
 
         $work->save();
 
+        // Handle multiple image uploads and store in WorkImages table
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $fileName = time() . '_' . uniqid() . '.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/works', $fileName);
+
+                // Insert record in WorkImages table
+                WorkImages::create([
+                    'work_id' => $work->id,
+                    'image'   => $fileName
+                ]);
+            }
+        }
+
         Helper::successMsg('update', $this->moduleName);
-        return redirect($this->route);
+        return back();
+        // return redirect($this->route);
     }
+
+
 
 
     public function changeStatus($id)
@@ -151,4 +170,19 @@ class WorkController extends Controller
         Helper::successMsg('delete', $this->moduleName);
         return redirect($this->route);
     }
+
+    public function deleteImage($id)
+{
+    $image = WorkImages::findOrFail($id);
+
+    // Delete image from storage
+    if (Storage::exists("public/works/{$image->image}")) {
+        Storage::delete("public/works/{$image->image}");
+    }
+
+    // Delete record
+    $image->delete();
+
+    return back()->with('success', 'Image deleted successfully!');
+}
 }

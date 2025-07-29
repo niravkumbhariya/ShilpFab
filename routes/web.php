@@ -57,6 +57,7 @@ Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function ()
     Route::put('/update/{id}', [WorkController::class, 'update'])->name('works.update');
     Route::get('/delete/{id}', [WorkController::class, 'delete'])->name('works.delete');
     Route::get('/changeStatus/{id}', [WorkController::class, 'changeStatus'])->name('works.changeStatus');
+    // Route::delete('/work/image/{id}/images', [WorkController::class, 'deleteImage'])->name('work.image.delete');
 });
 
 Route::group(['prefix' => 'admin/contacts', 'middleware' => ['auth'],], function () {
@@ -69,11 +70,11 @@ Route::group(['prefix' => 'admin/contacts', 'middleware' => ['auth'],], function
 
 Route::get('/test-mail', function () {
     // Mail::raw('Test email from cPanel SMTP.', function ($message) {
-    //     $message->to('lakummahendra654@gmail.com')
+    //     $message->to('')
     //             ->subject('Test Email');
     // });
 
-    Mail::to('lakummahendra654@gmail.com')->send(new ContactThanksMail('John Doe'));
+    // Mail::to('')->send(new ContactThanksMail('John Doe'));
 
     return 'Mail sent!';
 });

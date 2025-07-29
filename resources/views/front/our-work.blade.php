@@ -15,26 +15,47 @@
     </div>
 
     <div class="product-list-section">
-        <div class="container">
-            <div class="product-list-wrapper">
-                @foreach ($works as $work)
+    <div class="container">
+        <div class="product-list-wrapper">
+            @foreach ($works as $work)
                 <div class="product-box" data-aos="fade-up" data-aos-duration="2000">
-                    <a data-fancybox="gallery1" href="images/product1-img1.jpg">
-                        <div class="img-wrapper">
-                            <img src="{{asset("public/storage/works/$work->image")}}" alt="Our Work">
-                        </div>
-                        <div class="service-content-wrapper">
-                            <h2 class="service-name">{{$work->title}}</h2>
-                            <p>{!! Str::limit($work->desc,300,'...') !!}</p>
-                        </div>
-                    </a>
-                    <a data-fancybox="gallery1" href="http://shilpfab.com/public/storage/services/1751864621_0frju1k6tX.jpg" style="display:none;"></a>
-                    <a data-fancybox="gallery1" href="http://shilpfab.com/public/storage/services/1751863985_2XuCtn7hx0.jpg" style="display:none;"></a>
+                    {{-- Main image clickable --}}
+                    @if($work->images->count() > 0)
+                        <a data-fancybox="gallery{{ $work->id }}"
+                           href="{{ asset('public/storage/works/'.$work->image) }}">
+                            <div class="img-wrapper">
+                                <img src="{{ asset('public/storage/works/'.$work->image) }}" alt="Our Work">
+                            </div>
+                            <div class="service-content-wrapper">
+                                <h2 class="service-name">{{ $work->title }}</h2>
+                                <p>{!! Str::limit($work->desc,300,'...') !!}</p>
+                            </div>
+                        </a>
+
+                        {{-- Additional images (hidden but included in gallery) --}}
+                        @foreach($work->images as $img)
+                            <a data-fancybox="gallery{{ $work->id }}"
+                               href="{{ asset('public/storage/works/'.$img->image) }}" style="display:none;"></a>
+                        @endforeach
+                    @else
+                        {{-- If no multiple images, fallback to single image field --}}
+                        <a data-fancybox="gallery{{ $work->id }}"
+                           href="{{ asset('public/storage/works/'.$work->image) }}">
+                            <div class="img-wrapper">
+                                <img src="{{ asset('public/storage/works/'.$work->image) }}" alt="Our Work">
+                            </div>
+                            <div class="service-content-wrapper">
+                                <h2 class="service-name">{{ $work->title }}</h2>
+                                <p>{!! Str::limit($work->desc,300,'...') !!}</p>
+                            </div>
+                        </a>
+                    @endif
                 </div>
-                @endforeach
-            </div>
+            @endforeach
         </div>
     </div>
+</div>
+
 
 
     @include('front.layouts.footer')
