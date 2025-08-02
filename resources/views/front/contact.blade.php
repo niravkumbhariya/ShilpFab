@@ -1,6 +1,12 @@
 @extends('front.layouts.app')
 @section('title', 'Contact Us')
 @section('css')
+ <style>
+    .text-danger{
+        color:red;
+        text-transform: capitalize;
+    }
+ </style>
 @endsection
 @section('content')
     <div class="main-wrapper">

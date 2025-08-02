@@ -31,6 +31,13 @@
     $('#contact-form').on('submit', function(e) {
         e.preventDefault();
 
+        // Clear old errors
+        $('.error').text('');
+
+        // Disable submit button
+        let submitBtn = $(this).find('button[type="submit"]');
+        submitBtn.prop('disabled', true).text('Sending...');
+
         $.ajax({
             url: $(this).attr('action'),
             method: "POST",
@@ -43,7 +50,18 @@
                 $('#contact-form')[0].reset();
             },
             error: function(xhr) {
-                alert('Something went wrong!');
+                if (xhr.status === 422) {
+                    // Show validation errors
+                    $.each(xhr.responseJSON.errors, function(key, value) {
+                        $('#' + key + '-error').text(value[0]);
+                    });
+                } else {
+                    alert('Something went wrong!');
+                }
+            },
+            complete: function() {
+                // Re-enable the button after success or error
+                submitBtn.prop('disabled', false).text('Send');
             }
         });
     });
