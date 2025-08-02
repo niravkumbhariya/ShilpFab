@@ -172,17 +172,27 @@ class WorkController extends Controller
     }
 
     public function deleteImage($id)
-{
-    $image = WorkImages::findOrFail($id);
+    {
+        try {
+            $image = WorkImages::findOrFail($id);
 
-    // Delete image from storage
-    if (Storage::exists("public/works/{$image->image}")) {
-        Storage::delete("public/works/{$image->image}");
+            // Delete image from storage
+            if (Storage::exists("public/works/{$image->image}")) {
+                Storage::delete("public/works/{$image->image}");
+            }
+
+            // Delete record from DB
+            $image->delete();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Image deleted successfully!'
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Failed to delete image! Please try again.'
+            ], 500);
+        }
     }
-
-    // Delete record
-    $image->delete();
-
-    return back()->with('success', 'Image deleted successfully!');
-}
 }

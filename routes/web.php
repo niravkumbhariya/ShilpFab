@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin/services', 'middleware' => ['auth'],], function
 
 Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function () {
     Route::get('/', [WorkController::class, 'index'])->name('works');
+    Route::delete('/work/image/{id}/images', [WorkController::class, 'deleteImage'])->name('work.image.delete');
     Route::get('getWorksData', [WorkController::class, 'getData'])->name('getworksData');
     Route::get('create', [WorkController::class, 'create'])->name('works.create');
     Route::post('store', [WorkController::class, 'store'])->name('works.store');
@@ -57,7 +58,6 @@ Route::group(['prefix' => 'admin/works', 'middleware' => ['auth'],], function ()
     Route::put('/update/{id}', [WorkController::class, 'update'])->name('works.update');
     Route::get('/delete/{id}', [WorkController::class, 'delete'])->name('works.delete');
     Route::get('/changeStatus/{id}', [WorkController::class, 'changeStatus'])->name('works.changeStatus');
-    // Route::delete('/work/image/{id}/images', [WorkController::class, 'deleteImage'])->name('work.image.delete');
 });
 
 Route::group(['prefix' => 'admin/contacts', 'middleware' => ['auth'],], function () {

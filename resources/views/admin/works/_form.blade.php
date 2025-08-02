@@ -67,13 +67,21 @@
                                     <span class="error"> {{ $errors->first('images') }}</span>
                                     <br />
                                     @if (isset($work->images) && $work->images->count() > 0)
-                                        <div class="row mt-3">
+                                        <div class="row mt-3" id="image-container">
                                             @foreach ($work->images as $img)
-                                                <div class="col-md-2 col-4 mb-3 text-center">
-                                                    <div class="border rounded shadow-sm">
+                                                <div
+                                                    class="col-md-2 col-4 mb-3 text-center position-relative image-box-{{ $img->id }}">
+                                                    <div class="border rounded shadow-sm position-relative">
+                                                        <!-- X icon -->
+                                                        <button type="button"
+                                                            class="btn btn-sm btn-danger delete-image-btn"
+                                                            data-id="{{ $img->id }}"
+                                                            style="position:absolute; top:-5px; right:5px; z-index:10; padding:0px 6px; font-size:12px;">
+                                                            &times;
+                                                        </button>
                                                         <img src="{{ asset('public/storage/works/' . $img->image) }}"
                                                             class="img-fluid rounded"
-                                                            style="width:80%;">
+                                                            style="width:100%; height:100px; object-fit:cover;">
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -103,4 +111,48 @@
     </section>
 
     <!-- /.content -->
+@endsection
+
+
+@section('script')
+    <script>
+        $(function() {
+            // CSRF token setup
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                        'content')
+                }
+            });
+
+            // Delete Image button click
+            $('body').on('click', '.delete-image-btn', function() {
+                let imageId = $(this).data('id');
+                let url = "{{ route('work.image.delete', ':id') }}".replace(':id', imageId);
+
+                if (confirm('Are you sure you want to delete this image?')) {
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        success: function(response) {
+                            if (response.status === 'success') {
+                                $('.image-box-' + imageId).fadeOut(300, function() {
+                                    $(this).remove();
+                                });
+                                alert(response
+                                    .message); // You can replace alert with Toast/SweetAlert
+                            } else {
+                                alert('Something went wrong!');
+                            }
+                        },
+                        error: function(xhr) {
+                            alert(xhr.responseJSON.message ??
+                                'Server error! Please try again.');
+                        }
+                    });
+                }
+            });
+
+        });
+    </script>
 @endsection
