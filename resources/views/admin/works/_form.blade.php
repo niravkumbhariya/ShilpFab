@@ -89,13 +89,13 @@
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-md-12 col-sm-12">
+                            {{-- <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="desc">Description: *</label>
                                     <textarea name="desc" id="desc">{{ old('desc', $work->desc) }}</textarea>
                                     <span class="error"> {{ $errors->first('desc') }}</span>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 

@@ -56,13 +56,23 @@
                                 </div>
                             </div>
 
+                            <!-- Multiple Image Upload Option (Full Row) -->
                             <div class="col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    <label for="images">Upload Multiple Images:</label>
+                                    <input type="file" class="form-control" id="images" name="images[]" multiple>
+                                    <span class="error"> {{ $errors->first('images') }}</span>
+                                    <br />
+                                </div>
+                            </div>
+
+                            {{-- <div class="col-md-12 col-sm-12">
                                 <div class="form-group">
                                     <label for="desc">Description: *</label>
                                     <textarea name="desc"></textarea>
                                     <span class="error"> {{ $errors->first('desc') }}</span>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             {{-- <div class="col-md-6 col-sm-12">
                                 <div class="form-group">

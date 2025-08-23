@@ -69,15 +69,29 @@ class WorkController extends Controller
         $request->validate([
             'title' => 'required',
             'image' => 'required|image|mimes:png,jpg,jpeg',
-            'desc' => 'required',
+            'desc' => 'nullable|string',
         ]);
 
         $image = Helper::fileUpload($request, 'image', 'works');
-        Work::create([
+        $work = Work::create([
             'title' => $request->title,
             'image' => $image,
-            'desc'  => $request->desc
+            'desc'  => $request->desc ? $request->desc : '-'
         ]);
+
+        // Handle multiple image uploads and store in WorkImages table
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $img) {
+                $fileName = time() . '_' . time() .rand(1,1000) .'.' . $img->getClientOriginalExtension();
+                $img->storeAs('public/works', $fileName);
+
+                // Insert record in WorkImages table
+                WorkImages::create([
+                    'work_id' => $work->id,
+                    'image'   => $fileName
+                ]);
+            }
+        }
 
         Helper::successMsg('insert', $this->moduleName);
         return redirect($this->route);
@@ -98,13 +112,13 @@ class WorkController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:255',
-            'desc' => 'required|string',
+            'desc' => 'nullable|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
         $work->title = $request->title;
-        $work->desc = $request->desc;
+        $work->desc = $request->desc ?? '-';
 
         // Single image (main image)
         if ($request->hasFile('image')) {
